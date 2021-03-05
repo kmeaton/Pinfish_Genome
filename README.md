@@ -1,4 +1,4 @@
-# Pinfish_Genome
+# Pinfish Genome
 
 This repository contains scripts used to assemble and annotate the pinfish genome (*Lagodon rhomboides*).
 
