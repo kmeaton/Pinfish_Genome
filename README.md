@@ -1,7 +1,8 @@
 # Pinfish_Genome
 
-### Assembly
 This repository contains scripts used to assemble and annotate the pinfish genome (*Lagodon rhomboides*).
+
+### Assembly
 
 Raw reads were generated on Oxford Nanopore MinION cells.
 
