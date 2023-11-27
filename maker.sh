@@ -63,7 +63,7 @@ awk '{ if ($2 ~ "repeat") print $0 }' Lrhomboides_rnd1.all.maker.noseq.gff > Lrh
 
 # RUN MAKER AGAIN (round 2.1) USING NEW GENE MODELS
 
-mpiexec -n 20 maker -base Lrhomboides_rnd2.1 maker_opts_rnd2.1_15may21.ctl maker_bopts.ctl maker_exe.ctl 2>&1 | tee round2.1_run_maker.log
+mpiexec -n 20 maker -base Lrhomboides_rnd2.1 maker_opts_rnd2.1.ctl maker_bopts_rnd2.1.ctl maker_exe_rnd2.1.ctl 2>&1 | tee round2.1_run_maker.log
 
 # Compile the output
 # First, move into the output directory
