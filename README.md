@@ -1,17 +1,19 @@
 # Pinfish Genome
 
-This repository contains scripts used to assemble and annotate the pinfish genome (*Lagodon rhomboides*).
+This repository contains scripts used to assemble and annotate the chromosome-scale genome of the pinfish (*Lagodon rhomboides*).
 
-### Assembly
+## Assembly
 
-Raw reads were generated on Oxford Nanopore MinION cells.
+Raw reads were generated on Oxford Nanopore MinION cells, and assembled using Flye 2.8-b1674 (complete commands used are detailed in `flye.sh`). This yielded an initial draft assembly.
 
-Reads were assembled using Flye 2.8-b1674, see the script flye.sh for more detail.
+#### Polishing
 
-Then, this draft assembly was polished using Illumina reads. These Illumina reads were trimmed using cutadapt, see the script cutadapt.sh for more detail.
+The initial draft assembly was polished using Illumina reads. 
 
-Trimmed Illumina reads were used to polish the assembly using the program pilon, see the script pilon.sh for more detail. 
+Raw Illumina reads were trimmed using cutadapt v. 2.3 (complete commands used are detailed in `cutadapt.sh`). Reads were then mapped to the initial draft assembly with bwa-mem v. 0.7.12-r1039 and used to polish this draft assembly using Pilon v. 1.23 (detailed commands of mapping and polishing in `pilon.sh`). 
 
-This draft genome was sent to Phase Genomics for HiC scaffolding, which resulted in a highly contiguous assembly with 24 scaffolds, corresponding to the expected number of chromosomes in this species, based off the genome of the gilthead seabream (*Sparus aurata*). 
+This draft genome was sent to Phase Genomics for HiC scaffolding, which resulted in a highly contiguous assembly with 24 scaffolds, corresponding to the known karyotype of this species. The complete genome assembly is currently available for reviewers on the GSA FigShare. 
 
-### Annotation
+## Annotation
+
+The assembly was iteratively annotated using 
