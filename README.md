@@ -4,7 +4,7 @@ This repository contains scripts used to assemble and annotate the chromosome-sc
 
 ## Assembly
 
-Raw reads were generated on Oxford Nanopore MinION cells, and assembled using Flye 2.8-b1674 (complete commands used are detailed in `flye.sh`). This yielded an initial draft assembly.
+Raw reads were generated on Oxford Nanopore MinION cells, and assembled using Flye 2.8-b1674 (complete commands used are detailed in `flye.sh`). This yielded an initial draft assembly. The log file from Flye, as well as the initial draft assembly info, are housed in the folder "flye". 
 
 #### Polishing
 
@@ -16,4 +16,6 @@ This draft genome was sent to Phase Genomics for HiC scaffolding, which resulted
 
 ## Annotation
 
-The assembly was iteratively annotated using 
+The assembly was iteratively annotated using the MAKER annotation pipeline. We began by building a repeat database using the program RepeatModeler v. 2.0.1 (details in `repeatmodeler.sh`). This database was used by MAKER to aid in repeat masking. 
+
+We ran 2 rounds of MAKER, the details of which are summarized in the file `maker.sh`. Briefly, this involved an initial run of the MAKER pipeline. The resulting gene models were parsed from this and used to train the ab-initio gene predictors SNAP and Augustus, which were then used in a second round of gene prediction via the MAKER pipeline. The control files used to run maker are in the "maker" folder. 
