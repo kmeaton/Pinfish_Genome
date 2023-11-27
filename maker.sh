@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # ROUND 1 OF MAKER
-maker maker_opts_rnd_1_18mar21.ctl maker_bopts.ctl maker_exe.ctl 2>&1 | tee maker_rnd1_commandoutput.OUT
+maker maker_opts_rnd1.ctl maker_bopts.ctl maker_exe.ctl 2>&1 | tee maker_rnd1_commandoutput.OUT
 
 # Parsing the output of round 1
 gff3_merge -s -d HiC_assembly_unmasked_master_datastore_index.log > Lrhomboides_rnd1.all.maker.gff
